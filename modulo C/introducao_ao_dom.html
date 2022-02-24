@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+
+    <style>
+        body{
+            background: rgb(68, 125,199);
+            color: white;
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando os estudos</h1>
+    <p>Aqui vai o resultado <br></p>
+    <p>Aprendendo a usar o <strong class="bold">DOM</strong> em JavaScript</p>
+    <div id="msg">Clique em mim</div>
+
+    <script>
+        //selecionando apenas um elemento
+        var p1 = window.document.getElementsByTagName('p')[0]//[0] eh o primeiro 
+        window.document.write(`Esta escrito assim: ${p1.innerText}\n`)
+        p1.style.color = 'blue' //mudar a cor do paragrafo
+        
+        //mudando a cor de fundo
+
+        var corpo = window.document.body
+        corpo.style.background = 'black'
+        
+        var p2 = window.document.getElementsByTagName('p')[1]
+        window.document.write(`\n ${p2.innerHTML}`) //com .innerHtml ele pega o html inteiro
+
+        // Acessando um elemento por seletor querySelctor() ou querySelectorAll()
+        var d = window.document.querySelector('div#msg') //acessando por id (#)
+        d.style.color = 'pink'
+    
+        var negrito = window.document.querySelector('strong.bold') //acessando por classe (.)
+        negrito.style.color = 'green'
+    </script>
+</body>
+</html>
